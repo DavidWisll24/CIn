@@ -1,0 +1,13 @@
+.div{
+    background: gainsboro url("../img/mariobackground.jpg");
+    background-size: cover;
+}
+.colorir{
+    color: red;
+}
+#cor{
+    background: #0bf;
+}
+label, li{
+    color: #341567;
+}
