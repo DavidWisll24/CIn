@@ -14,3 +14,5 @@
 
 O sistema recebe o nome primeiro o número de ocorrências(valor int). Depois, pede a ação(evento) a ser realizada, o tripulante que sofrerá essa ação e, caso seja "Mover", o index que ele ocupará (valor str).
 
+O sistema utilizará um for, onde cada ocorrencia será analisada
+Em cada ocorrencia, ele  deve conseguir diferenciar as três informações [Ação, Tripulante, index(se for mover)] e realizar o evento correspondente dentre as opções.
