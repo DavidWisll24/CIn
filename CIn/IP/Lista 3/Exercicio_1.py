@@ -24,9 +24,7 @@ for _ in range(num_ocorrencias):
 
     elif evento[0] == 'mover':
         if evento[1] in tripulantes:
-            index_tripulante = tripulantes.index(atual_tripulante)
-            tripulante_removido = tripulantes.pop(index_tripulante)
-            tripulantes.insert(evento[-1], tripulante_removido)
+            tripulantes.insert(int(evento[-1]), tripulantes.pop(tripulantes.index(atual_tripulante)))
 
     elif evento[0] == 'remover':
         if atual_tripulante in tripulantes:
@@ -34,7 +32,7 @@ for _ in range(num_ocorrencias):
 
     elif evento[0] == 'priorizar':
         if atual_tripulante in tripulantes:
-            tripulantes.insert(0, atual_tripulante)
+            tripulantes.insert(0, tripulantes.pop(tripulantes.index(atual_tripulante)))
 
     #Prints especiais
     if ( (evento[0] == "mover" and "Zaphod Beeblebrox" in ocorencia and evento[-1] == "0") 
@@ -57,13 +55,13 @@ for _ in range(num_ocorrencias):
         print("Finalmente alguém sensata a bordo! Bem-vinda, Trillian!")
 
 #FIM do programa
-print(f"Édipo: Graças à improbabilidade, os novos comandantes são: {tripulantes[0]}, {tripulantes[1]} e {tripulantes[2]}.")
+if len(tripulantes) >= 3:
+    print(f"Édipo: Graças à improbabilidade, os novos comandantes são: {tripulantes[0]}, {tripulantes[1]} e {tripulantes[2]}.")
 
-
-if tripulantes[3::1] != []:
-    print("Convocando tripulantes:")
-    for convocado in tripulantes[3::1]:
-        print(f"- {convocado}")
+    if tripulantes[3::1] != []:
+        print("Convocando tripulantes:")
+        for convocado in tripulantes[3::1]:
+            print(f"- {convocado}")
 
 elif len(tripulantes) >= 2 and len(tripulantes) != 0:
     print("Convocando tripulantes:")
