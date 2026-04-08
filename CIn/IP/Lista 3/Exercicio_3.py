@@ -8,7 +8,7 @@ fluido_portal = input()
 fluido_portal = int(fluido_portal) if fluido_portal.replace(' ', '').isnumeric() else str(fluido_portal)
 status_federacao = input()
 acao_historico = input()
-letra_dimensao = ''
+letra_dimensao = 'a'
 
 #Verificando Suco de Limão
 if fluido_portal == "Suco de Limão":
@@ -16,10 +16,13 @@ if fluido_portal == "Suco de Limão":
 
 #Código continua
 else:
+    #Verifica se a dimensão possui apenas letras
+    if dimensao_alvo.replace(" ", '').isalpha():
+        letra_dimensao = dimensao_alvo
     #Print especial
     if usuario_terminal == "Rick Prime" or usuario_terminal == "Evil Morty":
         print("Alerta Vermelho: Variante perigosa detectada no terminal!")
-    if dimensao_alvo.isupper():
+    if letra_dimensao.isupper():
         print("Não precisa gritar, Morty! O painel da arma não é surdo!")
 
     #Alterando histórico
