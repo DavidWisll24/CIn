@@ -22,11 +22,14 @@ print("Hora de escolher os melhores planetas para habitarmos!")
 num_planetas_removidos = 0
 for k in lista_candidatos:
     if lista_candidatos[lista_candidatos.index(k)][1] < 6 or lista_candidatos[lista_candidatos.index(k)][2] == "falha":
+        lista_candidatos.insert(lista_candidatos.index(k), '')
         lista_candidatos.pop(lista_candidatos.index(k))
         num_planetas_removidos += 1
-    
-    #Ordenando restantes
 
+for _ in range(num_planetas_removidos):
+    lista_candidatos.remove('')
+
+    #Ordenando restantes
 for l in range(len(lista_candidatos) - 1):
     for m in range(l, len(lista_candidatos) - 1):
         if lista_candidatos[l][1] < lista_candidatos[m+1][1]:
