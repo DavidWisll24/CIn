@@ -1,10 +1,6 @@
 #Missão Lazarus
 print("Bem vindos, exploradores! Começaremos à Missão Lazarus!")
-#planetas = input()
-
-######DESCARTAR
-planetas = "Muller - 8 - ok, Mark - 10 - ok, Pedro - 10 - falha, Marya - 7 - ok, Cleusa - 4 - falha"
-######DESCARTAR
+planetas = input()
 
     #Fazendo a lista de planetas
 lista_candidatos = planetas.split(", ")
