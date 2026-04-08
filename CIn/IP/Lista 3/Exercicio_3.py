@@ -1,14 +1,14 @@
-"""
 print("Sistema Operacional RickOS v3.14 - Inicializando Arma de Portais...")
 
 #Variáveis
 historico_dimensional = ["C-137", "Planeta Squanch"]
-usuario_teminal = input()
+usuario_terminal = input()
 dimensao_alvo = input()
 fluido_portal = input()
-fluido_portal = int(fluido_portal) if fluido_portal.isnumeric() else str(fluido_portal)
+fluido_portal = int(fluido_portal) if fluido_portal.replace(' ', '').isnumeric() else str(fluido_portal)
 status_federacao = input()
 acao_historico = input()
+letra_dimensao = ''
 
 #Verificando Suco de Limão
 if fluido_portal == "Suco de Limão":
@@ -17,7 +17,7 @@ if fluido_portal == "Suco de Limão":
 #Código continua
 else:
     #Print especial
-    if usuario_teminal == "Rick Prime" or usuario_teminal == "Evil Morty":
+    if usuario_terminal == "Rick Prime" or usuario_terminal == "Evil Morty":
         print("Alerta Vermelho: Variante perigosa detectada no terminal!")
     if dimensao_alvo.isupper():
         print("Não precisa gritar, Morty! O painel da arma não é surdo!")
@@ -28,7 +28,7 @@ else:
         historico_dimensional.append(dimensao_alvo)
     elif acao_historico == "esconder":
         print("Apagando o último rastro... Federação idiota.")
-        historico_dimensional.remove(historico_dimensional[-1])
+        historico_dimensional.pop()
     elif acao_historico == "priorizar":
         print("Sobrescrevendo prioridades. Nova dimensão no topo da lista!")
         historico_dimensional.insert(0, dimensao_alvo)
@@ -48,8 +48,3 @@ else:
             print(f"Ah, já estivemos na dimensão {dimensao_alvo}. Bora encher a cara no Blips and Chitz!")
         else:
             print("Preparando salto interdimensional... Wubba Lubba Dub Dub!")
-
-"""
-c = "BHAGHAJFHGKHLK   ADOJIHGIFUDGVJHANKÇJO DAJGUIYFADGJVHBJKPO ADHGUYFTUCGADVBJLHPYOUGI"
-if c.isupper():
-    print("ABC")
