@@ -8,10 +8,11 @@ for i in range(len(lista) - 1):
 
 print(lista)
 """
-lista_candidatos = [["ababa", "baba"], ["vdvd", "cmcmc"], ["g"]]
+a = ["abcd", "bcd", "cd", "d", "acdb", "adb", "acda"]
 
-nomes_planetas = 'nada'
-for n in range(len(lista_candidatos)):
-    nomes_planetas += ", " + lista_candidatos[n][0]
-nomes_planetas = nomes_planetas.replace("nada, ", '')
-print(nomes_planetas)
+for i in range(len(a)-1):
+    for j in range(i, len(a)-1):
+        if a[i] < a[j+1]:
+            a[i], a[j+1] = a[j+1], a[i]
+
+print(a)

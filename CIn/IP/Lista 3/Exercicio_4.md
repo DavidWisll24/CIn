@@ -17,7 +17,7 @@ Esses dados são:
 Agora, na fase de análise, temos dois processos:
 **1** - Se um planeta possuir *nivel de habitacionalidade* menor que 6 ou o *status de sua sonda* for "falha", ele deve ser ELIMINADO DA LISTA DE PLANETAS CANDIDATOS
 
-**2** - Apos a eliminação de candidatos incapazes, deve-se organizar a lista de planetas candidatos em **ordem decrescente**, usando como  parametro o *nível de habitalidade*
+**2** - Apos a eliminação de candidatos incapazes, deve-se organizar a lista de planetas candidatos em **ordem decrescente**, usando como  parametro o *nível de habitalidade*. Caso o nível seja o mesmo, organize em ordem alfabetica.
 
 OUTPUTS:
 Antes de começar a Missão Lazarus, imprima:

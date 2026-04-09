@@ -34,6 +34,9 @@ for l in range(len(lista_candidatos) - 1):
     for m in range(l, len(lista_candidatos) - 1):
         if lista_candidatos[l][1] < lista_candidatos[m+1][1]:
             lista_candidatos[l], lista_candidatos[m+1] = lista_candidatos[m+1], lista_candidatos[l]
+        elif lista_candidatos[l][1] == lista_candidatos[m+1][1]:
+            if lista_candidatos[l][0] > lista_candidatos[m+1][0]:
+                lista_candidatos[l], lista_candidatos[m+1] = lista_candidatos[m+1], lista_candidatos[l]
 
 #FIM Endurece
 if lista_candidatos != []:
