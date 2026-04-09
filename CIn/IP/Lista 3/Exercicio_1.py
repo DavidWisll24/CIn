@@ -55,18 +55,22 @@ for _ in range(num_ocorrencias):
         print("Finalmente alguém sensata a bordo! Bem-vinda, Trillian!")
 
 #FIM do programa
+    #Se tiver o suficiente para ter 3 comandantes
 if len(tripulantes) >= 3:
     print(f"Édipo: Graças à improbabilidade, os novos comandantes são: {tripulantes[0]}, {tripulantes[1]} e {tripulantes[2]}.")
 
+        #Pegando os tripulantes restantes
     if tripulantes[3::1] != []:
         print("Convocando tripulantes:")
         for convocado in tripulantes[3::1]:
             print(f"- {convocado}")
 
+    #Senão, mas tiver alguem
 elif len(tripulantes) >= 2 and len(tripulantes) != 0:
     print("Convocando tripulantes:")
     for convocado in tripulantes:
         print(f"- {convocado}")
 
+    #Nave vazia
 else:
     print("Édipo: Graças à improbabilidade, os novos comandantes são: ninguém... a nave está vazia!")
