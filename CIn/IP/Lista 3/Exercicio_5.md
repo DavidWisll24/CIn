@@ -8,7 +8,7 @@ No labirinto do filme Maze Runner, você é um corredor que teve de adentrar no 
 - **1 Rastreamento de seções** Para cada seção maior que 2, deve ser calculado os primos pelo postulado, até a seção n.
 - **2 Coleta de Primos** Para cada seção, guardar os números primos encontrados pelo Postulado *SEM REPETIÇÃO*
 - **3 Decodificação Final** Após a seção n(última):
-    1º Ordene do maior primo para o menor primo ESPECIFICAMENTE DA LISTA DE PRIMOS ENCONTRADOS NESSA SEÇÃO;
+    1º Ordene do maior primo para o menor primo especificamente da lista de primos encontrados nesta seção;
     2º Selecionar o maior primo dessa lista
     3º Aplicar formulá de saída: Some 1 a esse maior primo e divida o resultado por dois. Essa será a possível saída.
 - **Por fim,** mostre todos os números primos encontrados e a quantidade de vezes que cada um deles apareceu para cada intervalo.
@@ -49,3 +49,18 @@ Aplicando a decodificação em n = 5:
 Número da seção (int)
 
 ## Saída
+Caso seja uma seção menor que 9, encerre o código;
+Caso seja válida:
+    - Mostre a lista de números primos ordenados inversamente e separados por espaços;
+    - Em seguida, imprima, na ordem crescente dos números, a quantidade de vezes que cada número apareceu de maneira correspondente
+    - Print vazio(quebra de linha)
+    - Caso valor m encontrado no cálculo for igual a entrada informada, isso significa uma armadilha. Mostre:
+        Thomas: O cálculo apontou para a seção que você estava! Isso é uma armadilha.
+        Minho: O Thomas tem razão.
+
+    - Caso a diferença entre a entrada e o valor seja 1, eles falam:
+        Thomas: A decodificação diz que a saída está na seção imediatamente anterior a que você estava.
+        Minho: Se isso realmente for válido, então restam 2 opções de saída.
+    
+    - Já se a diferença entre a entrada e o valor for maior de 1, você diz para eles:
+        De todos os cálculos feitos, a única seção que apresentou diferença maior do que 1 foi essa.
