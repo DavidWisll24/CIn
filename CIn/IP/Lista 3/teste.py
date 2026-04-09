@@ -8,11 +8,9 @@ for i in range(len(lista) - 1):
 
 print(lista)
 """
-a = ["abcd", "bcd", "cd", "d", "acdb", "adb", "acda"]
+a = ["abcd" "bcd", "cd" "d", ["acdb" "adb"]]
 
 for i in range(len(a)-1):
     for j in range(i, len(a)-1):
         if a[i] < a[j+1]:
             a[i], a[j+1] = a[j+1], a[i]
-
-print(a)
