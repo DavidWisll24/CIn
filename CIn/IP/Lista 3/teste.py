@@ -8,9 +8,15 @@ for i in range(len(lista) - 1):
 
 print(lista)
 """
-a = ["abcd" "bcd", "cd" "d", ["acdb" "adb"]]
+while True:
+    lista_repetição = []
+    valor = int(input())
+    for a in range(2, valor + 1):
+        lista = [x for x in range(a*2 + 1) if x > a]
 
-for i in range(len(a)-1):
-    for j in range(i, len(a)-1):
-        if a[i] < a[j+1]:
-            a[i], a[j+1] = a[j+1], a[i]
+        for i in range(2, int((a*2)**0.5) +1):
+            for j in range(i*i, 2*a + 1, i):
+                if j in lista:
+                    lista.remove(j)
+        lista_repetição += lista
+    print(lista_repetição)
