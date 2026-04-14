@@ -95,7 +95,7 @@ else:
     matriz_frequencia_analise.insert(0, [0]*(j_colunas_matriz + 2))
 
     ###Definindo cada posição com não visitada
-    matriz_mapeada = matriz_frequencia.copy()
+    matriz_mapeada = [mesma_linha[:] for mesma_linha in matriz_frequencia]
     for c in matriz_mapeada:
         for d in range(len(c)):
             matriz_mapeada[matriz_mapeada.index(c)][d] = '.'
@@ -147,8 +147,8 @@ else:
     ###Printando matriz mapeada
     for linha_print in matriz_mapeada:
         elemento = ''
-        for coluna_print in range(len(linha_print)):
-            elemento += str(matriz_mapeada[matriz_mapeada.index(linha_print)][coluna_print])
+        for coluna_print in linha_print:
+            elemento += str(coluna_print)
         print(elemento)
     
     print(f"Doc Brown: Os sinais vêm da posição [{linha - 1}][{coluna - 1}]!")
