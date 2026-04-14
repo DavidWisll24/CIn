@@ -53,7 +53,7 @@ for k in inventário:
     elif k in itens_raros:
         pontos += 10*quantidade[inventário.index(k)]
     else:
-        pontos -= 5
+        pontos -= 5*quantidade[inventário.index(k)]
 
     ###Pondo os pontos entre 0 e 100
     if pontos < 0:
