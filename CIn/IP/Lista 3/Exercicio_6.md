@@ -1,5 +1,7 @@
 # De Volta Para O Futuro
-\\\\\\\\\\\\\\\\\\\\\\\\
+
+---
+
 ## ideia principal
 Matriz, onde serão listas: Itens pegos, Quantidade itens pegos
 
