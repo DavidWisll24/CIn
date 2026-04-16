@@ -68,6 +68,6 @@ Caso seja válida:
 
 
 ## Pensando na lógica
-Pelo Crivo de Eurastoteles, a ideia para achar os primos que existem até 2k é eliminar de uma lista com todos os termos de 2 até 2k os multipos de outros numeros diferentes de 1(ou seja, números que não são primos)
+Pelo Crivo de Eratóstenes, a ideia para achar os primos que existem até 2k é eliminar de uma lista com todos os termos de 2 até 2k os multipos de outros numeros diferentes de 1(ou seja, números que não são primos)
  Então:
  A lista se inicia em 2, e como multipos nada mais é que 2 somado x vezes, dá para aplicar essa lógica no código, andando a lista de 2 em 2 para, ou em p em p para um primo qualquer. Acho que um for (i², 2k, i)resolve (o inicial é i² par evitar eliminar o próprio número primo).
