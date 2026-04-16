@@ -15,7 +15,7 @@ else:
     Comentário que ajuda a entender o processo
 
     ## Pensando na lógica
-    Pelo Crivo de Eurastoteles, 
+    Pelo Crivo de Eratóstenes, 
     a ideia para achar os primos que existem até 2k é eliminar de uma lista
     com todos os termos de 2 até 2k os multipos de outros numeros diferentes de 1(ou seja, números que não são primos)
     Então:
