@@ -166,10 +166,39 @@ while int(binario_antigo, 2) < 88:
 
 print(mudancas)
 """
-
+"""
 matriz_mapeada = [[1, 2, 3, 4], [4, 3, 2, 1], [1, 2, 3, 4], [4, 3, 2, 1]]
 for linha_print in matriz_mapeada:
     elemento = ""
     for coluna_print in range(len(linha_print)):
         elemento += str(matriz_mapeada[matriz_mapeada.index(linha_print)][coluna_print])
     print(elemento)
+
+m = [i for i in input().split()]
+print(m)
+"""
+"""
+s_p_e_c_i_a_l = [int(atributo) for atributo in str(input()).split("-")] 
+
+intervalo_erro = False
+while not intervalo_erro:
+    num_atributo_ok = 0 
+    for intervalo in s_p_e_c_i_a_l: #*percorre cada valor na lista s.p.e.c.i.a.l
+        if intervalo < 1 or intervalo > 10: #*Se não estiver no intervalo
+            s_p_e_c_i_a_l = [int(atributo) for atributo in str(input()).split("-")] #*Pedindo novamente os valores
+        else: #Se estiver no intervalo
+            num_atributo_ok += 1 #*Pra cada atributo no intervalo, soma 1
+
+    if num_atributo_ok == len(s_p_e_c_i_a_l): #*Se o números de atributos ok for igual ao número de atributos, tá tudo certo
+        intervalo_erro = True
+"""
+"""
+alpha = [letra for letra in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"]
+coordenadas = [1]
+matriz = [["b", 'c', 'd'], ["a", "a"]]
+print(''.join([palavra_horizontal for palavra_horizontal in matriz[coordenadas[0]] if palavra_horizontal in alpha]))
+"""
+m = ['aba']
+
+if 'a' in m:
+    print("ok")
