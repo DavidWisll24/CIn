@@ -198,7 +198,45 @@ coordenadas = [1]
 matriz = [["b", 'c', 'd'], ["a", "a"]]
 print(''.join([palavra_horizontal for palavra_horizontal in matriz[coordenadas[0]] if palavra_horizontal in alpha]))
 """
-m = ['aba']
+ok = True
+tudoEntregue = False
+entradaPedidos = input('')
+pedidosDaCarol = entradaPedidos.split(', ')
+pedidosAchadosNoCaminhao = []
+pedidosAchadosAteEntao = []
+pedidosFaltando = []
+print('Pedido recebido! Vamos alocar os itens nos caminhões disponíveis.')
+while ok:
+    entradaCaminhao = input('')
+    if entradaCaminhao == '--':  # verifica se a entrada recebida é igual a --, se sim, para o código while e apresenta as saídas finais
+        ok = False
+        if len(pedidosAchadosAteEntao) == len(pedidosDaCarol):
+            tudoEntregue = True 
+        
+    else:
+        entregasDoCaminhao = entradaCaminhao.split(', ')
+        pedidosAchadosNoCaminhao = []
+        
 
-if 'a' in m:
-    print("ok")
+        for item in entregasDoCaminhao:
+            if item in pedidosDaCarol:
+                pedidosAchadosNoCaminhao.append(item)
+                if item in pedidosDaCarol and item not in pedidosAchadosAteEntao:
+                    pedidosAchadosAteEntao.append(item)
+        
+        # itera todos os itens do caminhao e verifica se o item está presente no array de pedidos da Carol, caso esteja, ele adiciona a um array de apoio com todos os pedidos presentes em cada caminhão
+        pedidosFaltando = []
+        for item in pedidosDaCarol:
+            if item not in pedidosAchadosAteEntao:
+                pedidosFaltando.append(item)
+        if len(pedidosAchadosNoCaminhao) > 0:
+            print(f'Ótimo, esse caminhão trouxe {pedidosAchadosNoCaminhao}!')
+        else: print('Não encontramos nada que a Carol pediu nesse caminhão.')
+        if len(pedidosFaltando) > 0:
+            print(f'Ainda precisamos de {pedidosFaltando}.')
+         
+        
+if tudoEntregue == True:
+    print('Conseguimos! A Carol ficará muito feliz :)')
+else:
+    print('Não conseguimos reunir todos os itens que a Carol precisa :(')

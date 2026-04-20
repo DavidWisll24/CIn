@@ -127,6 +127,12 @@ else: #*Se o nome não possuir Norm dentro dele, o codigo continua
                                 prox_linha = (num_linhas - 1)
                             
                         palavras_encontradas.append(palavra_rodada)
+                    
+                    else: #*Se a palavra for apenas uma Letra
+                        if caractere in alpha:
+                            palavra_rodada = caractere
+                            matriz[coordenadas[0]][coordenadas[1]] = '*'
+                            palavras_encontradas.append(palavra_rodada)
 
                 ###Verificando palavra descoberta
                 if caractere == '*': #*Caso já tenha sido encontrada
