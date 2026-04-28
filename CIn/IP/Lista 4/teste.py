@@ -92,8 +92,8 @@ if zero_vivo:
     print('Parabéns Subject ZERO! Seu trabalho deve ser recompensado. Nova dose do seu remédio esta aqui.')
 
 """
-b = [[]]
+b = [1, 2, 3, 4]
 
-if b in ["banana", "preto"]:
-    print("Hello")
-    print(b[0][0])
+b.insert(2, b.pop(3))
+
+print(b)

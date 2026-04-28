@@ -20,27 +20,33 @@ def compra(comprado, qtd_sois): #*Função das compras das plantas
 def combate(): #*Função do combate
     ##Ataque Plantas
     i = 0
-    plantas = ["Disparervilha", "Gelervilha","Noz-Obstáculo"] #*Lista apenas com as plantas
     
-    while arsenal[i][0] in plantas: #* Dá dano para cada planta ofensiva
+    while qtd_plantas[0] > i: #* Dá dano para cada planta ofensiva
         if arsenal[i][0] == "Gelervilha" or arsenal[i][0] == "Disparervilha":
             zumbi[1] -= 1
-            if arsenal[i][0] == "Gelervilha" and zumbi[2] > 1: #*Caso possível, diminui a velocidade do zumbi pelo efeito da Gelervilha
+            if arsenal[i][0] == "Gelervilha" and zumbi[2] > 1 and (zumbi[0] != "Zumbi do Jornal" or zumbi[1] <= 5 and zumbi[0] == "Zumbi do Jornal"): #*Caso possível, diminui a velocidade do zumbi pelo efeito da Gelervilha
                 zumbi[2] -= 1
-            
+            elif arsenal[i][0] == "Gelervilha" and zumbi[0] == "Zumbi do Jornal" and zumbi[2] > 2: #*Caso Especial: Velocidade minima do Zumbi do Jornal, após perder o jornal, é 2
+                zumbi[2] -= 1
         i += 1
 
-    if zumbi[0] > 0: #*Se o zumbi sobreviver
+    ##Condição Especial
+    if zumbi[0] == "Zumbi do Jornal" and zumbi[1] == 5:
+        zumbi[2] += 1
+
+    if zumbi[1] > 0: #*Se o zumbi sobreviver
         passos = 0 #*Quantos passos o zumbi deu na matriz
         planta_encontrada = False #*Verifica se uma planta foi encontrada
 
         while passos < zumbi[2] and not(planta_encontrada):
             passos += 1
 
-            if arsenal[arsenal.index(zumbi) - 1][0] in plantas: #*Verifica se para onde o zumbi vai é uma planta
+            if arsenal[arsenal.index(zumbi) - 1] !=  []: #*Verifica se para onde o zumbi vai é uma planta
                 ##Condição Especial - Zumbi Saltador
                 while zumbi[0] == "Zumbi Saltador" and arsenal[arsenal.index(zumbi) - 1][0] == "Noz-Obstáculo":
-                    arsenal[arsenal.index(zumbi) - 1][0] = zumbi
+                    arsenal[arsenal.index(zumbi) - 1] = zumbi
+                    arsenal.pop()
+                    qtd_plantas[0] -= 1 #*Diminui a quantidade de plantas totais vivas
                     if arsenal.index(zumbi) == 0:
                         derrota = True #*Zumbi venceu
                         return derrota
@@ -49,17 +55,21 @@ def combate(): #*Função do combate
                 arsenal[arsenal.index(zumbi) - 1][1] -= 1 #*Ataca a planta
 
                 if arsenal[arsenal.index(zumbi) - 1][1] == 0: #*Se a planta morrer
+                    qtd_plantas[0] -= 1 #*Diminui a quantidade de plantas totais vivas
                     arsenal[arsenal.index(zumbi) - 1] = zumbi #*O zumbi assume o lugar
+                    arsenal.pop()
                     print("NOMNOMNOM!")
             
             elif arsenal[arsenal.index(zumbi) - 1] == []: #* Se não tiver nada
                 arsenal[arsenal.index(zumbi) - 1] = zumbi #*Anda normalmente
+                arsenal.pop()
 
             if arsenal.index(zumbi) == 0:
                 derrota = True #*Zumbi venceu
                 return derrota
-        
+    
 #INICIANDO A COMPRAS
+print("O quintal está sendo invadido! Prepare a melhor linha de defesa possível!")
 qtd_sois = int(input()) #*Recebe quantos sois se tem
 finalizado = False #*Diz que as compras não acabaram
 arsenal = [] #*Local onde é armazenado as plantas compradas para a batalha
@@ -80,8 +90,11 @@ while not(finalizado): #*Vai comprando até acabar o estoque de sois ou receber 
             qtd_sois -= gasto
 #FIM das Compras
 
+qtd_plantas = [len(arsenal)]
+
 #Batalha
-while len(arsenal) < 18:
+print("Lá vem o zumbi... espero que suas plantas estejam preparadas!")
+while len(arsenal) < 17:
     arsenal.append([]) #*Adaptando o arsenal para ser o campo de batalha
 
 nome_zumbi = str(input()) #*Recebe o tipo de Zumbi que ataca
@@ -89,16 +102,16 @@ nome_zumbi = str(input()) #*Recebe o tipo de Zumbi que ataca
 ##Definindo Características do Zumbi
 if nome_zumbi == "Zumbi Normal":
     zumbi = ["Zumbi Normal", 10, 2] #* [0] -> nome; [1] -> vida; [2] -> velocidade
-    arsenal.insert(-1, zumbi)
+    arsenal.append(zumbi)
 elif nome_zumbi == "Zumbi Cabeça-de-Cone":
     zumbi = ["Zumbi Cabeça-de-Cone", 14, 2]
-    arsenal.insert(-1, zumbi)
+    arsenal.append(zumbi)
 elif nome_zumbi == "Zumbi do Jornal":
     zumbi = ["Zumbi do Jornal", 10, 2]
-    arsenal.insert(-1, zumbi)
+    arsenal.append(zumbi)
 elif nome_zumbi == "Zumbi Saltador":
     zumbi = ["Zumbi Saltador", 10, 2]
-    arsenal.insert(-1, zumbi)
+    arsenal.append(zumbi)
 
 derrota = False #*Zumbi venceu
 
