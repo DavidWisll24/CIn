@@ -91,9 +91,14 @@ if zero_vivo:
     print('\n====== FIM DAS MISSÕES ======')
     print('Parabéns Subject ZERO! Seu trabalho deve ser recompensado. Nova dose do seu remédio esta aqui.')
 
-"""
 b = [1, 2, 3, 4]
 
 b.insert(2, b.pop(3))
 
 print(b)
+"""
+
+m = [2]
+
+print(m[0])
+print(m[-1])
