@@ -98,7 +98,18 @@ b.insert(2, b.pop(3))
 print(b)
 """
 
-m = [2]
+matriz1 = [
+    [3, 4, 5]
+    [1, 1, 2]
+    [2, 2, 1]
+]
 
-print(m[0])
-print(m[-1])
+matriz2 = [
+    [1, 1, 3]
+    [3, 1, 1]
+    [2, 1, 2]
+]
+
+matriz_resultante = [
+    [matriz1[0][0]*matriz2[0][0] + matriz1[0][1]]
+]
