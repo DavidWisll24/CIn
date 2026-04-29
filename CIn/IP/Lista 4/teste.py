@@ -98,18 +98,36 @@ b.insert(2, b.pop(3))
 print(b)
 """
 
-matriz1 = [
-    [3, 4, 5]
-    [1, 1, 2]
+m1 = [
+    [3, 4, 5],
+    [1, 1, 2],
     [2, 2, 1]
 ]
 
-matriz2 = [
-    [1, 1, 3]
-    [3, 1, 1]
+m2 = [
+    [1, 1, 3],
+    [3, 1, 1],
     [2, 1, 2]
 ]
+mr = []
+#m_resultante = [
+#    [m1[0]['0']*"m2[0][0]" + m1[0]['1']*"m2[1][0]" + m1[0]['2']*"m2[2][0]" , m1[0]['0']*"m2[0][1]" + m1[0]['1']*"m2[1][1]" + m1[0]['2']*"m2[2][1]" , m1[0]['0']*"m2[0][2]" + m1[0]['1']*"m2[1][2]" + m1[0]['2']*"m2[2][2]"]
+#    '[m1[1]['0']*"m2[0][0]" + m1[1]['1']*"m2[1][0]" + m1[1]['2']*"m2[2][0]" , m1[1]['0']*"m2[0][1]" + m1[1]['1']*"m2[1][1]" + m1[1]['2']*"m2[2][1]" , m1[1]['0']*"m2[0][2]" + m1[1]['1']*"m2[1][2]" + m1[1]['2']*"m2[2][2]"]'
+#    '[m1[2]['0']*"m2[0][0]" + m1[2]['1']*"m2[1][0]" + m1[2]['2']*"m2[2][0]" , m1[2]['0']*"m2[0][1]" + m1[2]['1']*"m2[1][1]" + m1[2]['2']*"m2[2][1]" , m1[2]['0']*"m2[0][2]" + m1[2]['1']*"m2[1][2]" + m1[2]['2']*"m2[2][2]"]'
 
-matriz_resultante = [
-    [matriz1[0][0]*matriz2[0][0] + matriz1[0][1]]
-]
+"""
+Para cada elemento eu tenho uma linha inteira percorrendo uma coluna inteira 
+e essa mesma linha percorre x colunas até completar a primeira linha da matriz resultante
+
+FOCO: Estrutura que não se repete
+"""
+
+for i in range(3):
+    lm = []
+    for j in range(3):
+        e = m1[i][0]*m2[0][j] + m1[i][1]*m2[1][j] + m1[i][2]*m2[2][j]
+        lm.append(e)
+    mr.append(lm)
+    
+for b in mr:
+    print(b)
