@@ -97,7 +97,7 @@ b.insert(2, b.pop(3))
 
 print(b)
 """
-
+"""
 m1 = [
     [3, 4, 5],
     [1, 1, 2],
@@ -115,12 +115,12 @@ mr = []
 #    '[m1[1]['0']*"m2[0][0]" + m1[1]['1']*"m2[1][0]" + m1[1]['2']*"m2[2][0]" , m1[1]['0']*"m2[0][1]" + m1[1]['1']*"m2[1][1]" + m1[1]['2']*"m2[2][1]" , m1[1]['0']*"m2[0][2]" + m1[1]['1']*"m2[1][2]" + m1[1]['2']*"m2[2][2]"]'
 #    '[m1[2]['0']*"m2[0][0]" + m1[2]['1']*"m2[1][0]" + m1[2]['2']*"m2[2][0]" , m1[2]['0']*"m2[0][1]" + m1[2]['1']*"m2[1][1]" + m1[2]['2']*"m2[2][1]" , m1[2]['0']*"m2[0][2]" + m1[2]['1']*"m2[1][2]" + m1[2]['2']*"m2[2][2]"]'
 
-"""
+
 Para cada elemento eu tenho uma linha inteira percorrendo uma coluna inteira 
 e essa mesma linha percorre x colunas até completar a primeira linha da matriz resultante
 
 FOCO: Estrutura que não se repete
-"""
+
 
 for i in range(3):
     lm = []
@@ -131,3 +131,12 @@ for i in range(3):
     
 for b in mr:
     print(b)
+
+"""
+lista_nomes = ['banana', 'pedro', "maceio"]
+mostrar_nomes = ''
+for nome in lista_nomes:
+    mostrar_nomes += nome + 'b'
+
+print(mostrar_nomes[:len(mostrar_nomes) - 1])
+
