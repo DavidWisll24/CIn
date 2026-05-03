@@ -25,16 +25,8 @@ def distancia_inimigo(): #*Define a distancia maior entre o assassino e os sobre
     
     return distacia, coordenadas_inimigo
 
-def por_no_mapa(): #Garante que o personagem não sai do mapa
-    if coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][1] > 8:
-        coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][1] -= 1
-    elif coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][1] < 0:
-        coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][1] += 1
-
-    if coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][0] > 8:
-        coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][0] -= 1
-    elif coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][0] < 0:
-        coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][0] += 1
+def por_no_mapa(coordenadas_anterior): #Garante que o personagem não sai do mapa
+    coordenadas_personagens[0] = coordenadas_anterior
 
 def estruturas(nome_mapa): #*Define no mapa as posições das estruturas do jogo
     if nome_mapa == "MacMillan": #*Posição das estruturas no mapa MacMillan
@@ -55,6 +47,7 @@ def percurso(sobrevivente): #*Função do percurso
     tempo_recuperado = 0
 
     while acao < len(caminho):
+        coordenadas_anterior = coordenadas_personagens[0].copy()
         novo_percurso(acao, sobrevivente)
         coordenada_x = coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][1]
         coordenada_y = coordenadas_personagens[sobreviventes_validos.index(sobrevivente)][0]
@@ -62,7 +55,7 @@ def percurso(sobrevivente): #*Função do percurso
         ##Caso tente sair do mapa
         if coordenada_x < 0 or coordenada_x > 8 or coordenada_y < 0 or coordenada_y > 8:
             print("❌ Travou na parede! Deixou fácil pro killer!")
-            por_no_mapa()
+            por_no_mapa(coordenadas_anterior)
             enganchos[sobreviventes_validos.index(sobrevivente)] += 1
             ganchos[0] += 1
             return tempo_recuperado
