@@ -133,10 +133,26 @@ for b in mr:
     print(b)
 
 """
+"""
 lista_nomes = ['banana', 'pedro', "maceio"]
 mostrar_nomes = ''
 for nome in lista_nomes:
     mostrar_nomes += nome + 'b'
 
 print(mostrar_nomes[:len(mostrar_nomes) - 1])
+"""
+"""mapa = [["Mato" for x in range(9)] for y in range(9)]
 
+for i in mapa:
+    print(i)"""
+"""def m():
+    return True
+
+b, c, d = m()
+print(b, c, d)"""
+c = [1, 2, 3]
+v = [c.copy() for x in range(2)]
+print(v)
+v[0][0] = 2
+print(v)
+print(c)
