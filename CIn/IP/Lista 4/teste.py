@@ -150,9 +150,15 @@ for i in mapa:
 
 b, c, d = m()
 print(b, c, d)"""
-c = [1, 2, 3]
+"""c = [1, 2, 3]
 v = [c.copy() for x in range(2)]
 print(v)
 v[0][0] = 2
 print(v)
-print(c)
+print(c)"""
+"""lista = ['2.0', '2', '3', '3', 'b', 'n', 'm']
+copia = [float(b) if b.isnumeric() else str(b) for b in lista]
+print(copia)"""
+m = [1, 2, 4, 5]
+print(max(m))
+print(min(m))
