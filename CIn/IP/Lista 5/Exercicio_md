@@ -1,0 +1,92 @@
+# OS PRESSÁGIOS DA FLORESTA ANCESTRAL DE MERIDA
+
+## Contexto
+Nas Terras Altas, Merida encontra símbolos mágicos espalhados pela floresta ancestral. Cada número carrega um padrão oculto que precisa ser interpretado antes que a antiga magia de Mor'du desperte novamente.
+
+Sua missão será construir funções recursivas capazes de decifrar esses presságios através de diferentes transformações matemáticas.
+
+---
+
+## Etapa 1 — O Ritual do Sinal Antigo
+Para cada número `n`, calcule o valor do **Sinal Antigo** utilizando um fatorial especial.
+
+---
+
+## Etapa 2 — Índice do Presságio
+Com o valor do Sinal Antigo, some seus dígitos recursivamente para encontrar o **Índice do Presságio**.
+
+Caso o resultado seja menor que `2`, ajuste o valor para `2`.
+
+---
+
+## Etapa 3 — Memórias do Passado
+Some os dígitos do Índice do Presságio para obter as **Memórias do Passado**.
+
+Caso o resultado seja menor que `2`, ajuste o valor para `2`.
+
+---
+
+## Etapa 4 — O Eco das Luzes
+Utilize uma sequência de Fibonacci Generalizada para calcular o **Eco das Luzes**.
+
+Nessa sequência:
+- `n` representa o Índice do Presságio;
+- `k` representa as Memórias do Passado.
+
+O presente da sequência será formado pelas últimas `k` memórias anteriores.
+
+---
+
+## Etapa 5 — Julgamento Final
+Some:
+- o valor do Sinal Antigo;
+- o valor do Eco das Luzes.
+
+Se o resultado for um número primo, o presságio será considerado:
+
+- `SEGURO`
+
+Caso contrário:
+
+- `PERIGOSO`
+
+---
+
+# Regras
+
+- O uso de recursão é obrigatório.
+- É proibido utilizar:
+  - `for`
+  - `while`
+- Todos os cálculos devem utilizar aritmética modular de base `500`, incluindo resultados intermediários.
+- Caso qualquer soma de dígitos resulte em valor menor que `2`, o resultado deve ser ajustado para `2`.
+
+---
+
+# Input
+
+A entrada será uma lista de inteiros no formato:
+
+[n1, n2, n3, ...]
+
+Restrições:
+- `0 ≤ n ≤ 500`
+- A lista possui pelo menos um elemento.
+
+---
+
+# Output
+
+Para cada número da lista, exiba:
+
+Numero XXX | Sinal = YYY | Indice = ZZZ | Memorias = WWW | Eco das Luzes = VVV | Julgamento: RES
+
+Onde:
+- `XXX` → número original;
+- `YYY` → valor do Sinal Antigo;
+- `ZZZ` → Índice do Presságio;
+- `WWW` → Memórias do Passado;
+- `VVV` → Eco das Luzes;
+- `RES` → `SEGURO` ou `PERIGOSO`.
+
+Todos os valores numéricos devem ser exibidos com exatamente 3 dígitos, preenchendo com zeros à esquerda quando necessário.
