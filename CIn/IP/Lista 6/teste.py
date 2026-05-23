@@ -7,8 +7,11 @@ dic = {b:{'banana':2}}
 if 'banana' in dic[b]:
     print(6)"""
 
-b = 'abcde'
-a = 'zzy'
-
-if a > b:
-    print("bat")
+c = 'bab foah fouag buaf aoifg aif iafg fiha'
+nome = ''
+for b in c.split()[0:-1]:
+    if b == c.split()[-2]:
+        nome += b    
+    else:
+        nome += b + ' '
+print(nome)
